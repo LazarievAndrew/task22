@@ -20,21 +20,21 @@ function cLicker(event){
 
 	var target = event.target;
 
+	if(target.tagName != 'INPUT'){
+		return;
+	};
+
 	//можно сделать общую переменную, типа var count = target.parentElement.getElementsByClassName('counter')[0]
 	// и в условии ниже написать count.innerText++ и count.innerText-- соответственно.
 	
 	if (getPlus(target)){
 		
 		target.parentElement.getElementsByClassName('counter')[0].innerText++;
-	}
+	};
 
-	else if (getMinus(target)){
+	if (getMinus(target)){
 
 		target.parentElement.getElementsByClassName('counter')[0].innerText--;
-
-	} else {
-
-		return;
 	};
 };
 
