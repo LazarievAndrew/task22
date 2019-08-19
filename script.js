@@ -16,7 +16,7 @@ function getMinus(input){
 	return input.classList.contains('minus');
 };
 
-function onCounterCLick(event){
+function cLicker(event){
 
 	var target = event.target;
 
@@ -24,9 +24,18 @@ function onCounterCLick(event){
 		return;
 	};
 
-    getPlus(target) ? target.parentElement.getElementsByClassName('counter')[0].innerText++ : 0;
+	//можно сделать общую переменную, типа var count = target.parentElement.getElementsByClassName('counter')[0]
+	// и в условии ниже написать count.innerText++ и count.innerText-- соответственно.
+	
+	if (getPlus(target)){
+		
+		target.parentElement.getElementsByClassName('counter')[0].innerText++;
+	};
 
-    getMinus(target) ? target.parentElement.getElementsByClassName('counter')[0].innerText-- : 0;
+	if (getMinus(target)){
+
+		target.parentElement.getElementsByClassName('counter')[0].innerText--;
+	};
 };
 
-document.getElementById('activeZone').addEventListener('click', onCounterCLick);
+document.getElementById('activeZone').addEventListener('click', cLicker);
