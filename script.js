@@ -19,23 +19,19 @@ function getMinus(input){
 function cLicker(event){
 
 	var target = event.target;
-
-	//можно сделать общую переменную, типа var count = target.parentElement.getElementsByClassName('counter')[0]
-	// и в условии ниже написать count.innerText++ и count.innerText-- соответственно.
+	var count = target.parentElement.getElementsByClassName('counter')[0];
 	
 	if (getPlus(target)){
 		
-		target.parentElement.getElementsByClassName('counter')[0].innerText++;
+		count.innerText++;
+	};
+
+	if (getMinus(target)){
+
+		count.innerText--;
 	}
 
-	else if (getMinus(target)){
-
-		target.parentElement.getElementsByClassName('counter')[0].innerText--;
-
-	} else {
-
-		return;
-	};
+	return;
 };
 
 document.getElementById('activeZone').addEventListener('click', cLicker);
