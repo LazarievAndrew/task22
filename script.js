@@ -29,9 +29,7 @@ function cLicker(event){
 	if (getMinus(target)){
 
 		count.innerText--;
-	}
-
-	return;
+	};
 };
 
 document.getElementById('activeZone').addEventListener('click', cLicker);
